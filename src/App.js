@@ -5,6 +5,7 @@ function App() {
   const [powerOn, setPowerOn] = useState(true);
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const [displayText, setDisplayText] = useState('');
+  const [volume, setVolume] = useState(1);
   const playAudio = (audioEl, description) => {
     if (currentlyPlaying && currentlyPlaying !== audioEl) {
       currentlyPlaying.pause();
@@ -13,6 +14,7 @@ function App() {
 
     audioEl.pause();
     audioEl.currentTime = 0;
+    audioEl.volume = volume;
     audioEl.play().catch(error => console.error("Error playing audio: ", error));
     setCurrentlyPlaying(audioEl);
     setDisplayText(description);
@@ -49,7 +51,7 @@ function App() {
     };
 
     window.addEventListener('keydown', handleKeyPress);
-    
+
     const padIds = [
       { id: 'Heater-1', description: 'Heater 1' },
       { id: 'Heater-2', description: 'Heater 2' },
@@ -61,7 +63,7 @@ function App() {
       { id: 'Kick', description: 'Kick' },
       { id: 'Closed-HH', description: 'Closed HH' }
     ];
-    
+
     padIds.forEach(({ id, description }) => {
       const pad = document.getElementById(id);
       if (pad) {
@@ -79,7 +81,7 @@ function App() {
         }
       });
     };
-  }, [currentlyPlaying, powerOn]);
+  }, [currentlyPlaying, powerOn, volume]);
 
   const togglePower = () => {
     setPowerOn(prev => !prev);
@@ -93,6 +95,10 @@ function App() {
       setDisplayText('');
     }
   };
+
+  const handleVolumeChange = (event) => {
+    setVolume(event.target.value);
+  }
 
   return (
     <div className="App">
@@ -144,8 +150,9 @@ function App() {
               <div className={`inner ${powerOn ? 'on' : 'off'}`}></div>
             </div>
           </div>
-          <div id="volume-btn" className="control volume-btn">
+          <div className="volume-slider-container">
             <p>Volume</p>
+            <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="volume-slider" />
           </div>
           <div id="bank-btn" className="control bank-btn">
             <p>Bank</p>
