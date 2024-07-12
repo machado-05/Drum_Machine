@@ -83,6 +83,21 @@ body {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+.power.on {
+  background-color: green;
+}
+
+.power.off {
+  background-color: red;
+}
+
+.select.on .inner {
+  background-color: #00ff00;
+}
+
+.select.off .inner {
+background-color: #ff0000;
+}
 
 .control:hover {
   background-color: #555;
