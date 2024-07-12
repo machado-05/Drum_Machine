@@ -40,7 +40,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 0 auto;
-  width: 332px;
+  width: 100%;
+  max-width: 332px;
 }
 
 .drum-pad {
@@ -86,11 +87,11 @@ body {
 }
 
 .volume-slider {
-  writing-mode: bt-lr;
   transform-origin: 50% 50%;
   width: 100px;
   height: 15px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .volume-slider::-webkit-slider-runnable-track {
