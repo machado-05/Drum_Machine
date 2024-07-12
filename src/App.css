@@ -39,9 +39,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin: 0 auto;
   width: 100%;
-  max-width: 332px;
+  max-width: 800px;
 }
 
 .drum-pad {
@@ -87,11 +86,11 @@ body {
 }
 
 .volume-slider {
+  writing-mode: bt-lr;
   transform-origin: 50% 50%;
   width: 100px;
   height: 15px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .volume-slider::-webkit-slider-runnable-track {
@@ -122,6 +121,7 @@ body {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
 .power.on {
   background-color: green;
 }
@@ -135,7 +135,7 @@ body {
 }
 
 .select.off .inner {
-background-color: #ff0000;
+  background-color: #ff0000;
 }
 
 .control:hover {

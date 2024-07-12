@@ -6,6 +6,7 @@ function App() {
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const [displayText, setDisplayText] = useState('');
   const [volume, setVolume] = useState(1);
+  
   const playAudio = (audioEl, description) => {
     if (currentlyPlaying && currentlyPlaying !== audioEl) {
       currentlyPlaying.pause();
