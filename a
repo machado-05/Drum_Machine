@@ -1,0 +1,17 @@
+[33mcommit 5d73c8ca2aa1d615b91b9355db903f233c91b0a0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Felipe <felipe.machado8437@gmail.com>
+Date:   Thu Jul 11 20:15:40 2024 -0300
+
+    First commit
+
+[33mcommit 6f6787653a9dbc8d01a56bff49da42891a88c552[m
+Author: Felipe <felipe.machado8437@gmail.com>
+Date:   Thu Jul 11 12:09:09 2024 -0300
+
+    Initial project setup
+
+[33mcommit cf3b7dc61a9ec9882f935a7209360eac0aa3c1ba[m
+Author: Felipe <felipe.machado8437@gmail.com>
+Date:   Thu Jul 11 12:05:14 2024 -0300
+
+    Initialize project using Create React App
