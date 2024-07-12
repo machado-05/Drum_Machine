@@ -72,8 +72,18 @@ function App() {
       }
     });
 
+    const handleBankClick = () => {
+      setDisplayText("Not yet implemented :(")
+    }
+
+    const bankBtn = document.getElementById('bank-btn');
+    if (bankBtn) {
+      bankBtn.addEventListener('click', handleBankClick);
+    }
+
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
+      document.getElementById('bank-btn').removeEventListener('click', handleBankClick)
       padIds.forEach(({ id }) => {
         const pad = document.getElementById(id);
         if (pad) {
@@ -99,6 +109,8 @@ function App() {
   const handleVolumeChange = (event) => {
     setVolume(event.target.value);
   }
+
+ 
 
   return (
     <div className="App">
@@ -150,7 +162,7 @@ function App() {
               <div className={`inner ${powerOn ? 'on' : 'off'}`}></div>
             </div>
           </div>
-          <div className="volume-slider-container">
+          <div  className="volume-slider-container">
             <p>Volume</p>
             <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="volume-slider" />
           </div>

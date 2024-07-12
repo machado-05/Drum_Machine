@@ -30,7 +30,7 @@ body {
   width: 100%;
   max-width: 800px;
   background-color: #444;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -39,7 +39,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  width: 332px;
 }
 
 .drum-pad {
@@ -63,6 +64,11 @@ body {
 }
 
 .power.on:active, .power.on.active, .power.off:active, .power.off.active {
+  background-color: #777;
+  transform: scale(0.95);
+}
+
+.bank-btn:active, .bank-btn.active {
   background-color: #777;
   transform: scale(0.95);
 }
